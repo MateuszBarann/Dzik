@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra w Dzika</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <h1>Gra w Dzika</h1>
+    
+    <p>Aktualna liczba: <span id="wyswietlacz-liczby">0</span></p>
+    
+    <button id="przycisk-dzik">
+        <img src="dzik.jpg" alt="Kliknij Dzika!" id="obraz-dzik">
+    </button>
+    
+    <p>Twój wynik: <span id="wyswietlacz-wyniku">0</span></p>
+    <p>Najwyższy wynik: <span id="wyswietlacz-najwyzszy-wynik">0</span></p> <!-- Dodany element najwyższego wyniku -->
+    
+    <button id="przycisk-start">Start</button>
+    
+    <label for="predkosc">Szybkość (ms):</label> 
+    <input type="number" id="predkosc" value="1000">
+    
+    <div id="komunikat" style="margin-top: 10px; font-weight: bold;"></div> <!-- Element komunikatu -->
+    
+    <script src="skrypt.js"></script>
+</body>
+</html>
