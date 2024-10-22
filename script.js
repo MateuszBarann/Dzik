@@ -29,7 +29,7 @@ let dzik = function() {
         document.getElementById("komunikat").innerHTML = "Brawo! To liczba dzika.";
     } else {
         wynik -= 1;
-        document.getElementById("komunikat").innerHTML = "Źle! To nie jest liczba dzika.";
+        document.getElementById("komunikat").innerHTML = "Zle! To nie jest liczba dzika.";
     }
     
     document.getElementById("wynik").innerHTML = "Twoj wynik: " + wynik;
