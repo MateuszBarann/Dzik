@@ -3,21 +3,20 @@ let wynik = 0;
 let najwyzszyWynik = 0; 
 let interwalGry;
 let predkosc = 1000;
-
-var polePredkosc = document.getElementById("predkosc");
+let polePredkosc = document.getElementById("predkosc");
 
 let uruchomGre = function() {
     aktualnaLiczba = 0;
     wynik = 0;
     predkosc = parseInt(polePredkosc.value);
-    document.getElementById("wyswietlacz-wyniku").innerHTML = wynik;
+    document.getElementById("wynik").innerHTML = "Twoj wynik: " + wynik;
     document.getElementById("komunikat").innerHTML = ""; 
     interwalGry = setInterval(nastepnaLiczba, predkosc);
 }
 
 let nastepnaLiczba = function() {
     aktualnaLiczba += 1;
-    document.getElementById("wyswietlacz-liczby").innerHTML = aktualnaLiczba;
+    document.getElementById("liczba").innerHTML = "Aktualna liczba: " + aktualnaLiczba;
 }
 
 let czyLiczbaDzika = function(liczba) {
@@ -33,12 +32,12 @@ let dzik = function() {
         document.getElementById("komunikat").innerHTML = "Źle! To nie jest liczba dzika.";
     }
     
-    document.getElementById("wyswietlacz-wyniku").innerHTML = wynik;
+    document.getElementById("wynik").innerHTML = "Twoj wynik: " + wynik;
 
  
     if (wynik > najwyzszyWynik) {
         najwyzszyWynik = wynik;
-        document.getElementById("wyswietlacz-najwyzszy-wynik").innerHTML = najwyzszyWynik; 
+        document.getElementById("najwyzszy_wynik").innerHTML = "Najwyzszy wynik: " + najwyzszyWynik; 
     }
 
     
