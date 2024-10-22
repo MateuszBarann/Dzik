@@ -6,7 +6,7 @@ var predkosc = 1000;
 
 var wyswietlaczLiczby = document.getElementById("wyswietlacz-liczby");
 var wyswietlaczWyniku = document.getElementById("wyswietlacz-wyniku");
-var wyswietlaczNajwyzszyWynik = document.getElementById("wyswietlacz-najwyzszy-wynik"); // Element do wyświetlania najwyższego wyniku
+var wyswietlaczNajwyzszyWynik = document.getElementById("wyswietlacz-najwyzszy-wynik");
 var komunikat = document.getElementById("komunikat");
 var przyciskStart = document.getElementById("przycisk-start");
 var przyciskDzik = document.getElementById("przycisk-dzik");
