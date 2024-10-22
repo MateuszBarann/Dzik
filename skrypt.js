@@ -1,61 +1,53 @@
-var aktualnaLiczba = 0;
-var wynik = 0;
-var najwyzszyWynik = 0; 
-var interwalGry;
-var predkosc = 1000;
+let aktualnaLiczba = 0;
+let wynik = 0;
+let najwyzszyWynik = 0; 
+let interwalGry;
+let predkosc = 1000;
 
-var wyswietlaczLiczby = document.getElementById("wyswietlacz-liczby");
-var wyswietlaczWyniku = document.getElementById("wyswietlacz-wyniku");
-var wyswietlaczNajwyzszyWynik = document.getElementById("wyswietlacz-najwyzszy-wynik");
-var komunikat = document.getElementById("komunikat");
 var przyciskStart = document.getElementById("przycisk-start");
 var przyciskDzik = document.getElementById("przycisk-dzik");
 var polePredkosc = document.getElementById("predkosc");
 
-function uruchomGre() {
+let uruchomGre = function() {
     aktualnaLiczba = 0;
     wynik = 0;
     predkosc = parseInt(polePredkosc.value);
-    wyswietlaczWyniku.textContent = wynik;
-    komunikat.textContent = ""; 
+    document.getElementById("wyswietlacz-wyniku").innerHTML = wynik;
+    document.getElementById("komunikat").innerHTML = ""; 
     interwalGry = setInterval(nastepnaLiczba, predkosc);
 }
 
-function nastepnaLiczba() {
+let nastepnaLiczba = function() {
     aktualnaLiczba += 1;
-    wyswietlaczLiczby.textContent = aktualnaLiczba;
+    document.getElementById("wyswietlacz-liczby").innerHTML = aktualnaLiczba;
 }
 
-function czyLiczbaDzika(liczba) {
+let czyLiczbaDzika = function(liczba) {
     return liczba % 7 === 0 || liczba.toString().includes('7');
 }
 
 przyciskDzik.onclick = function() {
     if (czyLiczbaDzika(aktualnaLiczba)) {
         wynik += 1;
-        komunikat.textContent = "Brawo! To liczba dzika.";
+        document.getElementById("komunikat").innerHTML = "Brawo! To liczba dzika.";
     } else {
         wynik -= 1;
-        komunikat.textContent = "Źle! To nie jest liczba dzika.";
+        document.getElementById("komunikat").innerHTML = "Źle! To nie jest liczba dzika.";
     }
     
-    wyswietlaczWyniku.textContent = wynik;
+    document.getElementById("wyswietlacz-wyniku").innerHTML = wynik;
 
  
     if (wynik > najwyzszyWynik) {
         najwyzszyWynik = wynik;
-        wyswietlaczNajwyzszyWynik.textContent = najwyzszyWynik; 
+        document.getElementById("wyswietlacz-najwyzszy-wynik").innerHTML = najwyzszyWynik; 
     }
 
     
-    setTimeout(function() {
-        komunikat.textContent = "";
-    }, 1000);
+    setTimeout(function() {document.getElementById("komunikat").innerHTML = "";}, 1000);
 }
 
 przyciskStart.onclick = function() {
-    if (interwalGry) {
-        clearInterval(interwalGry);
-    }
+    clearInterval(interwalGry);
     uruchomGre();
 }
