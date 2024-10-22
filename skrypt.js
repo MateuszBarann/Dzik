@@ -4,8 +4,6 @@ let najwyzszyWynik = 0;
 let interwalGry;
 let predkosc = 1000;
 
-var przyciskStart = document.getElementById("przycisk-start");
-var przyciskDzik = document.getElementById("przycisk-dzik");
 var polePredkosc = document.getElementById("predkosc");
 
 let uruchomGre = function() {
@@ -26,7 +24,7 @@ let czyLiczbaDzika = function(liczba) {
     return liczba % 7 === 0 || liczba.toString().includes('7');
 }
 
-przyciskDzik.onclick = function() {
+let dzik = function() {
     if (czyLiczbaDzika(aktualnaLiczba)) {
         wynik += 1;
         document.getElementById("komunikat").innerHTML = "Brawo! To liczba dzika.";
@@ -47,7 +45,7 @@ przyciskDzik.onclick = function() {
     setTimeout(function() {document.getElementById("komunikat").innerHTML = "";}, 1000);
 }
 
-przyciskStart.onclick = function() {
+let start = function() {
     clearInterval(interwalGry);
     uruchomGre();
 }
